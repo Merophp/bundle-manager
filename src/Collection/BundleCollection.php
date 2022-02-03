@@ -5,6 +5,7 @@ use Exception;
 use IteratorAggregate;
 use ArrayIterator;
 use Merophp\BundleManager\Bundle;
+use Traversable;
 
 class BundleCollection implements IteratorAggregate
 {
@@ -51,9 +52,9 @@ class BundleCollection implements IteratorAggregate
     }
 
     /**
-     * @return iterable
+     * @return Traversable
      */
-    public function getIterator(): iterable
+    public function getIterator(): Traversable
     {
         return new ArrayIterator($this->bundles);
     }
